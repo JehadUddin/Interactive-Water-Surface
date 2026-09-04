@@ -1,0 +1,8 @@
+{
+  "name": "Remix Interactive Water Surface",
+  "description": "Realistic 3D ocean simulation with cinematic entering scene, dynamic camera modes, controllable powerboat with hydrodynamics, Kelvin wake trails, and ambient marine audio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
