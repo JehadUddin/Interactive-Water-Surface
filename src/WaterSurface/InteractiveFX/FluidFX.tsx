@@ -79,12 +79,11 @@ export default function FluidFX({
 		const pointerPos = refPointer?.current ? refPointer.current : new Vector2(0, 0);
 		const fluid = updateFluid(props, {
 			pointerValues: updatePointer(pointerPos),
-		});
+		} as any);
 		const fx = updateBlending(props, {
-			//texture: bgTexture,
 			map: fluid,
 			alphaMap: false,
-		});
+		} as any);
 
 		if (materialRef.current?.material?.uniforms?.u_fx) {
 			materialRef.current.material.uniforms.u_fx.value = fx;
