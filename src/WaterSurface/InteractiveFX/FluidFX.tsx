@@ -20,6 +20,14 @@ export type FXFluidProps = {
 	curlStrength?: number;
 	pressureIterations?: number;
 	fluidColor?: (velocity: Vector2) => Vector3;
+	density_dissipation?: number;
+	velocity_dissipation?: number;
+	velocity_acceleration?: number;
+	pressure_dissipation?: number;
+	splat_radius?: number;
+	curl_strength?: number;
+	pressure_iterations?: number;
+	fluid_color?: (velocity: Vector2) => Vector3;
 };
 
 export default function FluidFX({
@@ -53,7 +61,15 @@ export default function FluidFX({
 		curlStrength,
 		pressureIterations,
 		fluidColor,
-	});
+		density_dissipation: densityDissipation,
+		velocity_dissipation: velocityDissipation,
+		velocity_acceleration: velocityAcceleration,
+		pressure_dissipation: pressureDissipation,
+		splat_radius: splatRadius,
+		curl_strength: curlStrength,
+		pressure_iterations: pressureIterations,
+		fluid_color: fluidColor,
+	} as any);
 
 	const updatePointer = usePointer();
 

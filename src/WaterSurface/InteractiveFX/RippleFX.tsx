@@ -9,6 +9,7 @@ export type FXRippleProps = {
 	frequency?: number;
 	rotation?: number;
 	fadeoutSpeed?: number;
+	fadeout_speed?: number;
 	scale?: number;
 	alpha?: number;
 };
@@ -17,9 +18,11 @@ export default function RippleFX({
 	frequency = 0.01,
 	rotation = 0.05,
 	fadeoutSpeed = 0.9,
+	fadeout_speed,
 	scale = 0.2,
 	alpha = 1.0,
 }: FXRippleProps) {
+	const effectiveFadeoutSpeed = fadeout_speed ?? fadeoutSpeed;
 	const { ref: materialRef, refPointer } = useContext(WaterContext);
 
 	const { size, dpr } = useThree((state) => {
@@ -38,10 +41,11 @@ export default function RippleFX({
 	setRipple({
 		frequency,
 		rotation,
-		fadeoutSpeed,
+		fadeoutSpeed: effectiveFadeoutSpeed,
+		fadeout_speed: effectiveFadeoutSpeed,
 		scale,
 		alpha,
-	});
+	} as any);
 
 	const updatePointer = usePointer();
 
